@@ -176,3 +176,101 @@ console.log(Math.floor(Math.random() * 4) + 1); */
 ];
 // Мне выпить еще молочного коктейля?
 console.log(phrases[Math.floor(Math.random() * phrases.length - 1) + 1]); */
+
+// 2.11.2023 ===============================================================
+/* // Homework
+// 1,2 
+const randomBodyParts = ["рука", "обличчя", "вухо", "палець"]
+const randomBodyAnimalsParts = ["лапа", "вуса", "хвіст", "кігті"]
+const randomAdjectives = ["весела", "сумна", "музикальна"]
+const randomWords = ["муха", "кошеня", "барсук"]
+
+const randomBodyPart = randomBodyParts[Math.floor(Math.random() * randomBodyParts.length - 1) +1]
+const randomBodyAnimalsPart = randomBodyAnimalsParts[Math.floor(Math.random() * randomBodyAnimalsParts.length - 1) +1]
+const randomAdjective = randomAdjectives[Math.floor(Math.random() * randomAdjectives.length - 1) +1]
+const randomWord = randomWords[Math.floor(Math.random() * randomWords.length - 1) +1]
+
+const randomInsult = `В тебе ${randomBodyPart} ще більш ${randomAdjective}, ніж ${randomBodyAnimalsPart} у ${randomWord}`
+console.log(randomInsult)
+
+// 4
+const arr = [3, 2, 1] 
+console.log(arr.join(" більш, ніж ")); */
+
+// Objects
+/* const cat = {
+  name: "Munja",
+  "full age": 11,
+  color: "blau",
+  isSheNice: true,
+};
+
+console.log(cat.name);
+console.log(cat["full age"]);
+
+// Object.keys(obj) - як взнати всі ключі об'єкту
+console.log(Object.keys(cat));
+
+const newObj = {};
+newObj;
+
+cat.color = "green";
+cat.isSheNice = false;
+cat.voice = false;
+cat["full age"] = 12;
+console.log(cat);
+
+const dinosaurs = [
+  { name: "Тираннозавр рекс", period: "Верхнемеловой" },
+  { name: "Стегозавр", period: "Верхнеюрский" },
+  { name: "Платеозавр", period: "Триасовый" },
+];
+
+console.log(dinosaurs[0].name);
+console.log(dinosaurs[2].name);
+console.log(dinosaurs[2].period);
+console.log(dinosaurs[1]);
+
+const anna = { name: "Анна", age: 11, luckyNumbers: [2, 4, 8, 16] };
+const dave = { name: "Дэйв", age: 5, luckyNumbers: [3, 9, 40] };
+const kate = { name: "Кейт", age: 9, luckyNumbers: [1, 2, 3] };
+
+const friends = [anna, dave, kate];
+
+console.log(friends[0]);
+console.log(friends[1].age);
+console.log(friends[1].luckyNumbers[2]);
+
+const owedMoney = {};
+owedMoney["Джимми"] = 5;
+owedMoney["Анна"] = 7;
+console.log(owedMoney["Джимми"]);
+console.log(owedMoney["Элис"]);
+
+owedMoney["Джимми"] += 3;
+console.log(owedMoney["Джимми"]);
+console.log(owedMoney);
+
+// Homework
+//1
+const scores = {
+  lena: 0,
+  max: 0,
+  olivia: 0,
+};
+
+scores.lena += 3;
+scores.max += 1;
+scores.olivia += 50;
+
+console.log(scores);
+
+//2
+const myCrazyObject = {
+  name: "Нелепый объект",
+  "some array": [7, 9, { purpose: "путаница", number: 123 }, 3.3],
+  "random animal": "Банановая акула",
+};
+console.log(myCrazyObject["some array"][2].number); */
+
+// Цикли
