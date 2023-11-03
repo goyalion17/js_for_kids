@@ -273,4 +273,72 @@ const myCrazyObject = {
 };
 console.log(myCrazyObject["some array"][2].number); */
 
+// 3.11.2023 ===============================================================
 // Цикли
+/* let myName = "Iryna";
+console.log(`Hi ${myName}`);
+myName = "Eve";
+if (myName.length > 4) {
+  console.log("Яке в вас ім'я задовге");
+} else {
+  console.log(`Ім'я в вас не з дліннючих`);
+} */
+
+/* const myName2 = "Iryna";
+if (myName2 === "Iryna") {
+  console.log("Привіт мені");
+} else {
+  console.log(`Привіт, ${myName2}`);
+} */
+
+// while
+/* let sheepCounted = 0;
+while (sheepCounted < 10) {
+  console.log(`Hi: ${sheepCounted + 1}`);
+  sheepCounted++;
+} */
+
+// for
+/* for (let i = 0; i < 10; i++) {
+  console.log(`Hi: ${i}`);
+}
+
+const animals = ["лама", "олень", "ведмідь", "лев"];
+for (let i = 0; i < animals.length; i++) {
+  console.log(`В цьму зоопарку є ${animals[i]}`);
+} */
+
+/* for (let i = 2; i < 1000; i = i * 2) {
+  console.log(i);
+} */
+
+/* for (let i = 3; i < 10000; i = i * 3) {
+  console.log(i);
+}
+
+let three = 3;
+while (three < 10000) {
+  console.log(`${ three *= 3}`);
+  three++;
+}
+ */
+
+// Homework
+//1
+/* const animals = ["Кот", "Рыба", "Лемур", "Комодский варан"];
+for (let index = 0; index < animals.length; index++) {
+  const element = animals[index];
+  console.log(`${element} - чудова тварина!`);
+} */
+
+//2
+/* const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+let randomString = "";
+
+while (randomString.length <= 6) {
+  let letter = Math.floor(Math.random() * alphabet.length);
+  let randomLetter = alphabet[letter];
+  randomString += randomLetter;
+  console.log(randomString);
+}
+ */
