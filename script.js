@@ -342,3 +342,70 @@ while (randomString.length <= 6) {
   console.log(randomString);
 }
  */
+
+// 4.11.2023 ===============================================================
+/* const input = "javascript is awesome";
+let output = "";
+
+for (let i = 0; i < input.length; i++) {
+  if (input[i] === "a") {
+    output += 4;
+  } else if (input[i] === "e") {
+    output += 3;
+  } else if (input[i] === "i") {
+    output += 1;
+  } else if (input[i] === "o") {
+    output += 0;
+  } else {
+    output += input[i];
+  }
+
+  console.log(output);
+} */
+
+// Игра Виселица
+/* const userName = prompt("Як вас звати?");
+alert(`Привіт, ${userName}`);
+const likeCats = confirm("Тобі подобаються котики?");
+if (likeCats) {
+  alert("Ти чудова кішка!");
+} else {
+  alert("То не проблема. Все одно ти молодець!");
+}
+alert("JavaScript это здорово!");
+ */
+
+const secretWords = ["риба", "капуста", "нота", "карась", "птиця", "меч", "мова", "годинник", "спікер", "краватка", "дах"];
+const secretWord = secretWords[Math.floor(Math.random() * secretWords.length)];
+console.log("secretWord: ", secretWord);
+let answerArr = [];
+
+for (let i = 0; i < secretWord.length; i++) {
+  answerArr[i] = "_";
+}
+console.log("answerArr: ", answerArr);
+
+let remainingLetters = secretWord.length;
+console.log("remainingLetters: ", remainingLetters);
+
+while (remainingLetters > 0) {
+  alert(answerArr.join(" "));
+  const guess = prompt(
+    "Вгадайте букву, або натисніть Відміна для виходу з гри"
+  );
+  if (guess === null) {
+    break;
+  } else if (guess.length !== 1) {
+    alert("Будь ласка, треба ввести лише одну букву.");
+  } else {
+    // Відновлюємо гру
+    for (let j = 0; j < secretWord.length; j++) {
+      if (secretWord[j] === guess.toLowerCase()) {
+        answerArr[j] = guess.toLowerCase();
+        remainingLetters--;
+      }
+    }
+  }
+}
+alert(answerArr.join(" "));
+alert("Отлично! Было загадано слово " + secretWord);
