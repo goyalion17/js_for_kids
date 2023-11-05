@@ -375,7 +375,19 @@ if (likeCats) {
 alert("JavaScript это здорово!");
  */
 
-const secretWords = ["риба", "капуста", "нота", "карась", "птиця", "меч", "мова", "годинник", "спікер", "краватка", "дах"];
+/* const secretWords = [
+  "риба",
+  "капуста",
+  "нота",
+  "карась",
+  "птиця",
+  "меч",
+  "мова",
+  "годинник",
+  "спікер",
+  "краватка",
+  "дах",
+];
 const secretWord = secretWords[Math.floor(Math.random() * secretWords.length)];
 console.log("secretWord: ", secretWord);
 let answerArr = [];
@@ -387,8 +399,9 @@ console.log("answerArr: ", answerArr);
 
 let remainingLetters = secretWord.length;
 console.log("remainingLetters: ", remainingLetters);
+let attempts = remainingLetters * 2;
 
-while (remainingLetters > 0) {
+while (remainingLetters > 0 && attempts > 0) {
   alert(answerArr.join(" "));
   const guess = prompt(
     "Вгадайте букву, або натисніть Відміна для виходу з гри"
@@ -399,13 +412,29 @@ while (remainingLetters > 0) {
     alert("Будь ласка, треба ввести лише одну букву.");
   } else {
     // Відновлюємо гру
+    let correctGuess = false;
     for (let j = 0; j < secretWord.length; j++) {
-      if (secretWord[j] === guess.toLowerCase()) {
+      if (secretWord[j] === guess.toLowerCase() && answerArr[j] === "_") {
         answerArr[j] = guess.toLowerCase();
         remainingLetters--;
+        correctGuess = true;
       }
+    }
+    if (!correctGuess) {
+      attempts--;
     }
   }
 }
-alert(answerArr.join(" "));
-alert("Отлично! Было загадано слово " + secretWord);
+if (attempts <= 0) {
+  alert("Число спроб закінчилося! Спробуй ще!");
+} else {
+  alert(answerArr.join(" "));
+  alert("Отлично! Было загадано слово " + secretWord);
+} */
+
+// 4.11.2023 ===============================================================
+// FUNCTIONS
+const func = function(name){
+  console.log("Hi, " + name)
+}
+func("Iryna")
