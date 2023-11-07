@@ -434,7 +434,95 @@ if (attempts <= 0) {
 
 // 4.11.2023 ===============================================================
 // FUNCTIONS
-const func = function(name){
-  console.log("Hi, " + name)
-}
-func("Iryna")
+/* const func = function (name) {
+  console.log("Hi, " + name);
+};
+func("Iryna"); */
+
+// 7.11.2023 ===============================================================
+/* const drawCats = function (times) {
+  for (let i = 0; i < times; i++) {
+    console.log(i + " =^.^=");
+  }
+};
+drawCats(100); */
+/* 
+const drawCats = function (times, whatToDraw) {
+  for (let i = 0; i < times; i++) {
+    console.log(i + whatToDraw);
+  }
+};
+drawCats(5, " =^.^=");
+drawCats(4, " (^_^)"); */
+
+/* const double = function (number) {
+  return number * 2;
+};
+console.log(double(5) + double(4));
+console.log(double(double(4)));
+ */
+// randomWords[Math.floor(Math.random() * randomWords.length)];
+
+/* const pickRandomWord = function (words) {
+  return words[Math.floor(Math.random() * words.length)];
+}; */
+/* const randomWords = ["Планета", "Червяк", "Цветок", "Компьютер"];
+console.log(pickRandomWord(["Чарли", "Радж", "Николь", "Кейт", "Сэнди"]));
+console.log(pickRandomWord(randomWords)); */
+
+// переписати генератор дражнилок з функцією
+/* const randomTeaserGenerator = function () {
+  const randomBodyParts = ["рука", "обличчя", "вухо", "палець"];
+  const randomBodyAnimalsParts = ["лапа", "вуса", "хвіст", "кігті"];
+  const randomAdjectives = ["весела", "сумна", "музикальна"];
+  const randomWords = ["муха", "кошеня", "барсук"];
+
+  const pickRandomWord = function (words) {
+    return words[Math.floor(Math.random() * words.length)];
+  };
+
+  const randomInsult = `В тебе ${pickRandomWord(
+    randomBodyParts
+  )} ще більш ${pickRandomWord(randomAdjectives)}, ніж ${pickRandomWord(
+    randomBodyAnimalsParts
+  )} у ${pickRandomWord(randomWords)}`;
+
+  return randomInsult;
+};
+
+console.log(randomTeaserGenerator()); */
+
+/* const fifthLetter = function (name) {
+  if (name.length < 5) {
+    return;
+  }
+  return "Пятая буква вашего имени: " + name[4] + ".";
+};
+console.log(fifthLetter("Николай"));
+console.log(fifthLetter("Ник"));
+
+const medalForScore = function (score) {
+  if (score < 3) {
+    return "Бронзовая";
+  }
+  if (score < 7) {
+    return "Серебряная";
+  }
+  return "Золотая";
+};
+console.log(medalForScore(5)); */
+
+// Homework
+//1
+
+const add = function (num1, num2) {
+  return num1 + num2;
+};
+
+const multiply = function (num1, num2) {
+  return num1 * num2;
+};
+
+console.log(add(2, 5));
+console.log(multiply(2, 5));
+console.log(add(multiply(36325, 9824), 777))
