@@ -514,8 +514,7 @@ console.log(medalForScore(5)); */
 
 // Homework
 //1
-
-const add = function (num1, num2) {
+/* const add = function (num1, num2) {
   return num1 + num2;
 };
 
@@ -525,4 +524,128 @@ const multiply = function (num1, num2) {
 
 console.log(add(2, 5));
 console.log(multiply(2, 5));
-console.log(add(multiply(36325, 9824), 777))
+console.log(add(multiply(36325, 9824), 777)); */
+
+// 8.11.2023 ===============================================================
+//2
+/* const areArraysSame = function (arr1, arr2) {
+  if (arr1.length != arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[j] != arr2[j]) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+};
+console.log(areArraysSame([1, 2, 3], [1, 2, 3]));
+console.log(areArraysSame([1, 2, 3], [4, 5, 6]));
+console.log(areArraysSame([1, 2, 3], [1, 2, 3, 4])); */
+
+//3
+/* // word: загаданное слово
+const word = pickWord();
+// answerArray: итоговый массив
+const answerArray = setupAnswerArray(word);
+// remainingLetters: сколько букв осталось угадать
+const remainingLetters = word.length;
+while (remainingLetters > 0) {
+  showPlayerProgress(answerArray);
+  // guess: ответ игрока
+  const guess = getGuess();
+  if (guess === null) {
+    break;
+  } else if (guess.length !== 1) {
+    alert("Пожалуйста, введите одиночную букву.");
+  } else {
+    // correctGuesses: количество открытых букв
+    const correctGuesses = updateGameState(guess, word, answerArray);
+    remainingLetters -= correctGuesses;
+  }
+}
+showAnswerAndCongratulatePlayer(answerArray); */
+
+const secretWords = [
+  "риба",
+  "капуста",
+  "нота",
+  "карась",
+  "птиця",
+  "меч",
+  "мова",
+  "годинник",
+  "спікер",
+  "краватка",
+  "дах",
+];
+
+let answerArr = [];
+
+const pickWord = () => {
+  const secretWord =
+    secretWords[Math.floor(Math.random() * secretWords.length)];
+  return secretWord;
+};
+let word = pickWord();
+
+const setupAnswerArray = function (word) {
+  let array = word.split("");
+  for (let i = 0; i < array.length; i++) {
+    answerArr[i] = "_";
+  }
+  return answerArr;
+};
+setupAnswerArray(word);
+
+const showPlayerProgress = function (answerArr) {
+  alert(answerArr.join(" "));
+};
+
+const getGuess = function () {
+  return prompt("Вгадайте букву, або натисніть Відміна для виходу з гри");
+};
+
+let remainingLetters = word.length;
+let attempts = remainingLetters * 2;
+
+const showAnswerAndCongratulatePlayer = function (answerArr) {
+  if (remainingLetters === 0) {
+    alert(answerArr.join(" "));
+    alert("Отлично! Было загадано слово " + word);
+  } else if (attempts <= 0) {
+    alert("Число спроб закінчилося! Спробуй ще!");
+  }
+};
+
+const updateGameState = function (guess, word, answerArr) {
+  if (guess.length !== 1) {
+    alert("Будь ласка, треба ввести лише одну букву.");
+  } else {
+    // Відновлюємо гру
+    let correctGuess = false;
+    for (let j = 0; j < word.length; j++) {
+      if (word[j] === guess.toLowerCase() && answerArr[j] === "_") {
+        answerArr[j] = guess.toLowerCase();
+        remainingLetters--;
+        correctGuess = true;
+      }
+    }
+    if (!correctGuess) {
+      attempts--;
+    }
+  }
+};
+
+while (remainingLetters > 0 && attempts > 0) {
+  showPlayerProgress(answerArr);
+  guess = getGuess();
+  if (guess === null) {
+    break;
+  } else updateGameState(guess, word, answerArr);
+}
+
+showAnswerAndCongratulatePlayer(answerArr);
