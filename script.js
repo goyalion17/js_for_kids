@@ -569,7 +569,7 @@ while (remainingLetters > 0) {
 }
 showAnswerAndCongratulatePlayer(answerArray); */
 
-const secretWords = [
+/* const secretWords = [
   "риба",
   "капуста",
   "нота",
@@ -648,4 +648,78 @@ while (remainingLetters > 0 && attempts > 0) {
   } else updateGameState(guess, word, answerArr);
 }
 
-showAnswerAndCongratulatePlayer(answerArr);
+showAnswerAndCongratulatePlayer(answerArr); */
+
+// 9.11.2023 ===============================================================
+
+/* const headingElement = document.querySelector('.main-heading')
+console.log(headingElement.textContent)
+
+const newHeadingText = prompt('Please enter a new heading: ')
+
+headingElement.textContent = newHeadingText */
+
+// JQuery
+// const newHeadingText = prompt("Please enter a new heading: ");
+//$(".main-heading").text(newHeadingText).fadeOut(3000).fadeIn(2000);
+// $("h1").slideUp(1000).slideDown(1000);
+
+// $("body").append("<p>This is a new paragraph</p>");
+
+/* for (let i = 0; i < 3; i++) {
+  const hobby = prompt("Please enter your hobby");
+  $("body").append(`<p>${hobby}</p>`);
+}
+ */
+/* for (let i = 0; i < 5; i++) {
+  $("h1").fadeOut(1000);
+  $("h1").fadeIn(1000);
+} */
+
+// Homework
+/* const bestFriends = ["Maria", "Anton", "Nik", "Mike", "Tony"];
+for (let i = 0; i < bestFriends.length; i++) {
+  const element = bestFriends[i];
+  $("body").append(`<p>${element}</p>`)
+  $("body").append(`<p>${element} is the best</p>`);
+}
+
+$(".main-heading").text("Hello my friends");
+$("p").hide(3000).fadeIn(3000);
+
+for (let i = 0; i < 5; i++) {
+  $("h1")
+    .fadeOut(1000)
+    .fadeIn(1000)
+    .fadeOut(2000)
+    .fadeIn(2000)
+    .fadeOut(3000)
+    .fadeIn(3000);
+}
+
+$("h1").delay(3000).fadeOut(1000).delay(5000).fadeIn(1000)
+
+$("h1").fadeTo(2000, 0.5); */
+
+// setTimeout
+/* const timeout = setTimeout(() => {
+  alert("Please wait...")
+}, 3000)
+
+const doHomeworkAlarm = () => {
+  alert("Doing a homework")
+}
+
+const timeoutId = setTimeout(doHomeworkAlarm, 3000)
+clearTimeout(timeoutId); */
+
+// setInterval
+let counter = 1
+
+const message = () =>{
+  console.log(`Ти дивишься в консоль вже ${counter} секунд`)
+  counter++
+}
+const intervalId = setInterval(message, 5000)
+
+clearInterval(intervalId)
