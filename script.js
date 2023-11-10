@@ -714,7 +714,7 @@ const timeoutId = setTimeout(doHomeworkAlarm, 3000)
 clearTimeout(timeoutId); */
 
 // setInterval
-let counter = 1
+/* let counter = 1
 
 const message = () =>{
   console.log(`Ти дивишься в консоль вже ${counter} секунд`)
@@ -722,4 +722,56 @@ const message = () =>{
 }
 const intervalId = setInterval(message, 5000)
 
-clearInterval(intervalId)
+clearInterval(intervalId) */
+
+// 10.11.2023 ===============================================================
+/* let leftOffset = 0;
+
+const moveHeading = () => {
+  $(".main-heading").offset({ left: leftOffset });
+  leftOffset++;
+  if (leftOffset > 200) {
+    leftOffset = 0;
+  }
+};
+
+setInterval(moveHeading, 15); */
+
+/* var clickHandler = function (event) {
+  console.log("Клик! " + event.pageX + " " + event.pageY);
+};
+$("h1").click(clickHandler); */
+
+/* $("html").mousemove((e) => {
+  $(".main-heading").offset({
+    left: e.pageX,
+    top: e.pageY,
+  });
+}); */
+
+// Homework
+// 1
+/* $("html").click((e) => {
+  $(".main-heading").offset({
+    left: e.pageX,
+    top: e.pageY,
+  });
+}); */
+
+// 2
+
+let offset = 0;
+
+const moveHeading = () => {
+  $(".main-heading").offset({ left: offset });
+  offset++;
+  if (offset > 200) {
+    offset = 200;
+  } else if (offset > 200 && offset > 400){
+    offset = 200;
+    $(".main-heading").offset({ down: offset });
+    offset++;
+  }
+};
+
+setInterval(moveHeading, 15);
