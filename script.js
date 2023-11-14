@@ -758,20 +758,76 @@ $("h1").click(clickHandler); */
   });
 }); */
 
-// 2
+// 14.11.2023 ===============================================================
 
+// 2
+/* const heading = $(".main-heading");
 let offset = 0;
+let direction = "right";
 
 const moveHeading = () => {
-  $(".main-heading").offset({ left: offset });
-  offset++;
-  if (offset > 200) {
-    offset = 200;
-  } else if (offset > 200 && offset > 400){
-    offset = 200;
-    $(".main-heading").offset({ down: offset });
+  const currentPosition = heading.offset();
+
+  if (direction === "right") {
+    heading.offset({
+      top: currentPosition.top,
+      left: currentPosition.left + 1,
+    });
     offset++;
+    if (offset >= 200) {
+      direction = "down";
+      offset = 0;
+    }
+  } else if (direction === "down") {
+    heading.offset({
+      top: currentPosition.top + 1,
+      left: currentPosition.left,
+    });
+    offset++;
+    if (offset >= 200) {
+      direction = "left";
+      offset = 0;
+    }
+  } else if (direction === "left") {
+    heading.offset({
+      top: currentPosition.top,
+      left: currentPosition.left - 1,
+    });
+    offset++;
+    if (offset >= 200) {
+      direction = "up";
+      offset = 0;
+    }
+  } else if (direction === "up") {
+    heading.offset({
+      top: currentPosition.top - 1,
+      left: currentPosition.left,
+    });
+    offset++;
+    if (offset >= 200) {
+      direction = "right";
+      offset = 0;
+    }
   }
 };
 
-setInterval(moveHeading, 15);
+const int = setInterval(moveHeading, 15);
+
+// 3
+heading.click(() => {
+  clearInterval(int);
+});
+
+// 4
+let sum = 0;
+let intervalId;
+heading.click(() => {
+  sum++;
+  intervalId = setInterval(moveHeading, 15);
+
+  if (sum >= 3) {
+    alert("You win!!!");
+    clearInterval(intervalId);
+  }
+});
+ */
