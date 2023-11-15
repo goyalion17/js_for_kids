@@ -831,3 +831,27 @@ heading.click(() => {
   }
 });
  */
+
+// 15.11.2023 ===============================================================
+// OOP
+const cat = {
+  legs: 4,
+  name: "Munja",
+  isCute: true,
+};
+console.log(cat.name);
+console.log(cat.legs);
+console.log(cat.isCute);
+cat.age = 11;
+console.log(cat.age);
+console.log(cat);
+
+miau = function (name) {
+  console.log(`Miau, my name is ${name}!`);
+};
+miau(cat.name);
+
+cat.furColor = function () {
+  console.log(`У меня ${this.legs} лапки и серый окрас`);
+};
+cat.furColor();
