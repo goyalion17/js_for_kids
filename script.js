@@ -737,7 +737,7 @@ const moveHeading = () => {
 
 setInterval(moveHeading, 15); */
 
-/* var clickHandler = function (event) {
+/* const clickHandler = function (event) {
   console.log("Клик! " + event.pageX + " " + event.pageY);
 };
 $("h1").click(clickHandler); */
@@ -834,7 +834,7 @@ heading.click(() => {
 
 // 15.11.2023 ===============================================================
 // OOP
-const cat = {
+/* const cat = {
   legs: 4,
   name: "Munja",
   isCute: true,
@@ -854,4 +854,88 @@ miau(cat.name);
 cat.furColor = function () {
   console.log(`У меня ${this.legs} лапки и серый окрас`);
 };
-cat.furColor();
+cat.furColor(); */
+
+// 16.11.2023 ===============================================================
+/* const speak = function () {
+  console.log(`${this.sound}! My name is ${this.name}.`);
+};
+
+const dog = {
+  sound: "Gav",
+  name: "Dog",
+  speak: speak,
+};
+
+dog.speak();
+
+const car = new Car(100, 200) */
+
+// const tesla = new Car(10, 20)
+// console.log('tesla: ', tesla);
+
+// Constructor
+/* class Car {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+} */
+
+const Car = function (x, y) {
+  this.x = x;
+  this.y = y;
+  this.draw();
+  this.speed = 10;
+};
+
+Car.prototype.draw = function () {
+  const carHtml = '<img src="./car.webp">';
+  this.carElement = $(carHtml);
+  this.carElement.css({
+    position: "absolute",
+    left: this.x,
+    top: this.y,
+  });
+  $("body").append(this.carElement);
+};
+
+const tesla = new Car(20, 20);
+const nissan = new Car(100, 200);
+
+Car.prototype.moveRight = function (speed) {
+  this.x += speed;
+  this.carElement.css({
+    left: this.x,
+    top: this.y,
+  });
+};
+
+Car.prototype.moveLeft = function (speed) {
+  this.x -= speed;
+  this.carElement.css({
+    left: this.x,
+    top: this.y,
+  });
+};
+
+Car.prototype.moveUp = function (speed) {
+  this.y -= speed;
+  this.carElement.css({
+    left: this.x,
+    top: this.y,
+  });
+};
+
+Car.prototype.moveDown = function (speed) {
+  this.y += speed;
+  this.carElement.css({
+    left: this.x,
+    top: this.y,
+  });
+};
+
+setInterval(nissan.moveRight(50), 30);
+setInterval(nissan.moveDown(200), 30);
+setInterval(tesla.moveLeft(20), 30);
+setInterval(tesla.moveUp(15), 30);
