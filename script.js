@@ -882,7 +882,7 @@ const car = new Car(100, 200) */
   }
 } */
 
-const Car = function (x, y) {
+/* const Car = function (x, y) {
   this.x = x;
   this.y = y;
   this.draw();
@@ -939,3 +939,84 @@ setInterval(nissan.moveRight(50), 30);
 setInterval(nissan.moveDown(200), 30);
 setInterval(tesla.moveLeft(20), 30);
 setInterval(tesla.moveUp(15), 30);
+ */
+
+// 17.11.2023 ===============================================================
+const canvas = document.querySelector("#canvas");
+const ctx = canvas.getContext("2d");
+// ctx.fillRect(0, 0, 10, 10);
+/* for (let i = 0; i < 4; i++) {
+  ctx.fillRect(i * 10, i * 10, 10, 10);
+}
+
+ctx.fillStyle = "red";
+ctx.fillRect(100, 0, 50, 50);
+ctx.fillRect(120, 50, 10, 25);
+ctx.fillRect(50, 75, 150, 10);
+ctx.fillRect(90, 75, 75, 75);
+ctx.fillRect(90, 150, 10, 50);
+ctx.fillRect(155, 150, 10, 50);
+
+ctx.fillRect(250, 0, 50, 100);
+ctx.fillStyle = "orange";
+ctx.fillRect(300, 0, 50, 100);
+ctx.fillStyle = "blue";
+ctx.fillRect(350, 0, 50, 100);
+
+ctx.strokeStyle = "green";
+ctx.lineWidth = 4
+ctx.strokeRect(450, 0, 100, 20)
+
+ctx.strokeStyle = "turquoise";
+ctx.lineWidth = 4
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(60, 60);
+ctx.moveTo(60, 100);
+ctx.lineTo(10, 60);
+ctx.stroke(); */
+
+/* ctx.strokeStyle = "violet";
+ctx.lineWidth = 4
+ctx.beginPath();
+ctx.moveTo(200, 0);
+ctx.lineTo(250, 0);
+ctx.moveTo(250, 0);
+ctx.lineTo(250, 50);
+ctx.moveTo(200, 50);
+ctx.lineTo(250, 50);
+ctx.moveTo(200, 0);
+ctx.lineTo(200, 50);
+ctx.moveTo(225, 50);
+ctx.lineTo(225, 200);
+ctx.moveTo(150, 50);
+ctx.lineTo(225, 150);
+ctx.moveTo(225, 150);
+ctx.lineTo(290, 50);
+ctx.moveTo(225, 200);
+ctx.lineTo(150, 300);
+ctx.moveTo(225, 200);
+ctx.lineTo(300, 300);
+ctx.stroke(); */
+
+/* ctx.fillStyle = "Blue";
+ctx.beginPath();
+ctx.moveTo(100, 100);
+ctx.lineTo(100, 60);
+ctx.lineTo(130, 30);
+ctx.lineTo(160, 60);
+ctx.lineTo(160, 100);
+ctx.lineTo(100, 100);
+ctx.fill(); */
+
+ctx.lineWidth = 2;
+ctx.strokeStyle = "Green";
+ctx.beginPath();
+ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(100, 50, 20, 0, Math.PI, false);
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(150, 50, 20, 0, Math.PI * 2, false);
+ctx.stroke();
