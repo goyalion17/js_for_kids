@@ -1009,7 +1009,7 @@ ctx.lineTo(160, 100);
 ctx.lineTo(100, 100);
 ctx.fill(); */
 
-ctx.lineWidth = 2;
+/* ctx.lineWidth = 2;
 ctx.strokeStyle = "Green";
 ctx.beginPath();
 ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
@@ -1019,4 +1019,101 @@ ctx.arc(100, 50, 20, 0, Math.PI, false);
 ctx.stroke();
 ctx.beginPath();
 ctx.arc(150, 50, 20, 0, Math.PI * 2, false);
-ctx.stroke();
+ctx.stroke(); */
+
+const circle = function (x, y, radius, fillCircle) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2, false, fillCircle);
+  ctx.stroke();
+  if (fillCircle) {
+    ctx.fill();
+  }
+};
+
+/* ctx.lineWidth = 4;
+ctx.strokeStyle = "Red";
+circle(100, 100, 10);
+ctx.strokeStyle = "Orange";
+circle(100, 100, 20);
+ctx.strokeStyle = "Yellow";
+circle(100, 100, 30);
+ctx.strokeStyle = "Green";
+circle(100, 100, 40);
+ctx.strokeStyle = "Blue";
+circle(100, 100, 50);
+ctx.strokeStyle = "Purple";
+circle(100, 100, 60); */
+
+// Homework
+// 1
+const drawSnowman = (a, b) => {
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = "black";
+  circle(100 + a, 100 + b, 30);
+  ctx.lineWidth = 4;
+
+  circle(90 + a, 90 + b, 4, true);
+  ctx.fillStyle = "black";
+  circle(110 + a, 90 + b, 4, true);
+  ctx.strokeStyle = "black";
+
+  ctx.fillStyle = "orange";
+  circle(100 + a, 105 + b, 5, true);
+
+  ctx.fillStyle = "orange";
+  circle(100 + a, 150 + b, 5, true);
+  ctx.fillStyle = "orange";
+  circle(100 + a, 165 + b, 5, true);
+  ctx.fillStyle = "orange";
+  circle(100 + a, 180 + b, 5, true);
+
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = "black";
+  circle(100 + a, 170 + b, 40);
+};
+
+// drawSnowman(50, 0);
+
+// 2
+const points = [
+  [50, 50],
+  [50, 100],
+  [100, 100],
+  [100, 50],
+  [50, 50],
+];
+const mysteryPoints = [
+  [50, 50],
+  [50, 100],
+  [25, 120],
+  [100, 50],
+  [70, 90],
+  [100, 90],
+  [70, 120],
+];
+
+const drawPoints = (points) => {
+  /* ctx.fillStyle = "Blue";
+  ctx.beginPath();
+  ctx.moveTo(points[0][0], points[0][1]);
+  ctx.lineTo(points[1][0], points[1][1]);
+  ctx.lineTo(points[2][0], points[2][1]);
+  ctx.lineTo(points[3][0], points[3][1]);
+  ctx.lineTo(points[4][0], points[4][1]);
+  ctx.fill(); */
+
+  ctx.fillStyle = "Blue";
+  ctx.beginPath();
+  ctx.moveTo(points[0][0], points[0][1]);
+  ctx.lineTo(points[1][0], points[1][1]);
+  ctx.lineTo(points[2][0], points[2][1]);
+  ctx.lineTo(points[3][0], points[3][1]);
+  ctx.lineTo(points[4][0], points[4][1]);
+  ctx.lineTo(points[5][0], points[5][1]);
+  ctx.lineTo(points[6][0], points[6][1]);
+  ctx.fill();
+};
+// drawPoints(points);
+drawPoints(mysteryPoints);
+
+// 3
