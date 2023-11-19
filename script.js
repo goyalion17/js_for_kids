@@ -1021,14 +1021,14 @@ ctx.beginPath();
 ctx.arc(150, 50, 20, 0, Math.PI * 2, false);
 ctx.stroke(); */
 
-const circle = function (x, y, radius, fillCircle) {
+/* const circle = function (x, y, radius, fillCircle) {
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, Math.PI * 2, false, fillCircle);
   ctx.stroke();
   if (fillCircle) {
     ctx.fill();
   }
-};
+}; */
 
 /* ctx.lineWidth = 4;
 ctx.strokeStyle = "Red";
@@ -1046,7 +1046,7 @@ circle(100, 100, 60); */
 
 // Homework
 // 1
-const drawSnowman = (a, b) => {
+/* const drawSnowman = (a, b) => {
   ctx.lineWidth = 4;
   ctx.strokeStyle = "black";
   circle(100 + a, 100 + b, 30);
@@ -1071,11 +1071,11 @@ const drawSnowman = (a, b) => {
   ctx.strokeStyle = "black";
   circle(100 + a, 170 + b, 40);
 };
-
+ */
 // drawSnowman(50, 0);
 
 // 2
-const points = [
+/* const points = [
   [50, 50],
   [50, 100],
   [100, 100],
@@ -1090,17 +1090,17 @@ const mysteryPoints = [
   [70, 90],
   [100, 90],
   [70, 120],
-];
+]; */
 
-const drawPoints = (points) => {
-  /* ctx.fillStyle = "Blue";
+/* const drawPoints = (points) => {
+  ctx.fillStyle = "Blue";
   ctx.beginPath();
   ctx.moveTo(points[0][0], points[0][1]);
   ctx.lineTo(points[1][0], points[1][1]);
   ctx.lineTo(points[2][0], points[2][1]);
   ctx.lineTo(points[3][0], points[3][1]);
   ctx.lineTo(points[4][0], points[4][1]);
-  ctx.fill(); */
+  ctx.fill();
 
   ctx.fillStyle = "Blue";
   ctx.beginPath();
@@ -1112,8 +1112,185 @@ const drawPoints = (points) => {
   ctx.lineTo(points[5][0], points[5][1]);
   ctx.lineTo(points[6][0], points[6][1]);
   ctx.fill();
-};
+}; */
 // drawPoints(points);
-drawPoints(mysteryPoints);
+// drawPoints(mysteryPoints);
 
 // 3
+// 18.11.2023 ===============================================================
+/* $("html").mousemove((e) => {
+  $("#canvas").offset({
+    left: e.pageX,
+    top: e.pageY,
+  });
+  circle(20, 20, 3);
+  ctx.strokeStyle = "green";
+}); */
+
+// 4
+
+/* const secretWords = [
+  "риба",
+  "капуста",
+  "нота",
+  "карась",
+  "птиця",
+  "меч",
+  "мова",
+  "годинник",
+  "спікер",
+  "краватка",
+  "дах",
+];
+
+let answerArr = [];
+
+const pickWord = () => {
+  const secretWord =
+    secretWords[Math.floor(Math.random() * secretWords.length)];
+  return secretWord;
+};
+let word = pickWord();
+
+const setupAnswerArray = function (word) {
+  let array = word.split("");
+  for (let i = 0; i < array.length; i++) {
+    answerArr[i] = "_";
+  }
+  return answerArr;
+};
+setupAnswerArray(word);
+
+const showPlayerProgress = function (answerArr) {
+  alert(answerArr.join(" "));
+};
+
+const getGuess = function () {
+  return prompt("Вгадайте букву, або натисніть Відміна для виходу з гри");
+};
+
+let remainingLetters = word.length;
+let attempts = remainingLetters * 2;
+
+const showAnswerAndCongratulatePlayer = function (answerArr) {
+  if (remainingLetters === 0) {
+    alert(answerArr.join(" "));
+    alert("Отлично! Было загадано слово " + word);
+  } else if (attempts <= 0) {
+    alert("Число спроб закінчилося! Спробуй ще!");
+  }
+};
+
+const updateGameState = function (guess, word, answerArr) {
+  if (guess.length !== 1) {
+    alert("Будь ласка, треба ввести лише одну букву.");
+  } else {
+    // Відновлюємо гру
+    let correctGuess = false;
+    for (let j = 0; j < word.length; j++) {
+      if (word[j] === guess.toLowerCase() && answerArr[j] === "_") {
+        answerArr[j] = guess.toLowerCase();
+        remainingLetters--;
+        correctGuess = true;
+      }
+    }
+    if (!correctGuess) {
+      attempts--;   
+      drawHangman(attempts)  
+    }
+  }
+};
+
+while (remainingLetters > 0 && attempts > 0) {
+  showPlayerProgress(answerArr);
+  guess = getGuess();
+  if (guess === null) {
+    break;
+  } else updateGameState(guess, word, answerArr);
+}
+
+showAnswerAndCongratulatePlayer(answerArr);
+
+function drawHangman(attempts) {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+
+  // Рисуем голову
+  if (attempts > 0) {
+      ctx.arc(100, 50, 25, 0, Math.PI * 2, true); // Outer circle
+  }
+
+  // Рисуем тело
+  if (attempts > 1) {
+      ctx.moveTo(100, 75);
+      ctx.lineTo(100, 125);
+  }
+
+  // Рисуем левую руку
+  if (attempts > 2) {
+      ctx.moveTo(100, 85);
+      ctx.lineTo(60, 105);
+  }
+
+  // Рисуем правую руку
+  if (attempts > 3) {
+      ctx.moveTo(100, 85);
+      ctx.lineTo(140, 105);
+  }
+
+  // Рисуем левую ногу
+  if (attempts > 4) {
+      ctx.moveTo(100, 125);
+      ctx.lineTo(60, 165);
+  }
+
+  // Рисуем правую ногу
+  if (attempts > 5) {
+      ctx.moveTo(100, 125);
+      ctx.lineTo(140, 165);
+  }
+
+  ctx.stroke();
+} */
+
+/* let position = 0;
+setInterval(function () {
+  ctx.clearRect(0, 0, 200, 200);
+  ctx.fillRect(position, 0, 20, 20);
+  position++;
+  if (position > 200) {
+    position = 0;
+  }
+}, 30);
+
+let size = 0;
+setInterval(function () {
+  ctx.clearRect(0, 0, 200, 200);
+  ctx.fillRect(0, 0, size, size);
+  size++;
+  if (size > 200) {
+    size = 0;
+  }
+}, 30); */
+
+let circle = function (x, y, radius, fillCircle) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+  fillCircle ? ctx.fill() : ctx.stroke();
+};
+
+const drawBee = function (x, y) {
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "Black";
+  ctx.fillStyle = "Gold";
+
+  circle(x, y, 8, true);
+  circle(x, y, 8, false);
+  circle(x - 5, y - 11, 5, false);
+  circle(x + 5, y - 11, 5, false);
+  circle(x - 2, y - 1, 2, false);
+  circle(x + 2, y - 1, 2, false);
+};
