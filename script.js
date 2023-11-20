@@ -944,6 +944,9 @@ setInterval(tesla.moveUp(15), 30);
 // 17.11.2023 ===============================================================
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
+let width = canvas.width;
+let height = canvas.height;
+
 // ctx.fillRect(0, 0, 10, 10);
 /* for (let i = 0; i < 4; i++) {
   ctx.fillRect(i * 10, i * 10, 10, 10);
@@ -1276,7 +1279,8 @@ setInterval(function () {
   }
 }, 30); */
 
-let circle = function (x, y, radius, fillCircle) {
+// Bee
+/* let circle = function (x, y, radius, fillCircle) {
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
   fillCircle ? ctx.fill() : ctx.stroke();
@@ -1294,3 +1298,177 @@ const drawBee = function (x, y) {
   circle(x - 2, y - 1, 2, false);
   circle(x + 2, y - 1, 2, false);
 };
+
+// 20.11.2023 ===============================================================
+const update = function (coordinate) {
+  const offset = Math.random() * 4 - 2;
+  coordinate += offset;
+  if (coordinate > 200) {
+    coordinate = 200;
+  }
+  if (coordinate < 0) {
+    coordinate = 0;
+  }
+  return coordinate;
+};
+
+let x = 100;
+let y = 100;
+setInterval(function () {
+  ctx.clearRect(0, 0, 200, 200);
+  drawBee(x, y);
+  x = update(x);
+  y = update(y);
+  ctx.strokeRect(0, 0, 200, 200);
+}, 30); */
+
+// Ball
+/* const balls = [];
+const Ball = function () {
+  const offset = Math.random() * 2 - 9;
+  this.x = 100;
+  this.y = 100;
+  this.xSpeed = offset;
+  this.ySpeed = offset;
+};
+
+const circle = function (x, y, radius, fillCircle) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+  if (fillCircle) {
+    ctx.fill();
+  } else {
+    ctx.stroke();
+  }
+};
+Ball.prototype.draw = function () {
+  circle(this.x, this.y, 3, true);
+};
+
+Ball.prototype.move = function () {
+  this.x += this.xSpeed;
+  this.y += this.ySpeed;
+};
+
+Ball.prototype.checkCollision = function () {
+  if (this.x < 0 || this.x > width) {
+    this.xSpeed = -this.xSpeed;
+  }
+  if (this.y < 0 || this.y > height) {
+    this.ySpeed = -this.ySpeed;
+  }
+};
+
+for (let i = 0; i <= 10; i++) {
+  const ball = new Ball();
+  setInterval(function () {
+    ctx.clearRect(0, 0, width, height);
+    ball.draw();
+    ball.move();
+    ball.checkCollision();
+    ctx.strokeRect(0, 0, width, height);
+  }, 30);
+}
+ */
+// Homework
+// 1
+// 2
+
+//
+/* $("body").keydown(function (event) {
+  console.log(event.keyCode);
+}); */
+
+/* var keyNames = {
+  32: "space", //пробел
+  37: "left", //влево
+  38: "up", //вверх
+  39: "right", //вправо
+  40: "down", //вниз
+  16: "shift", //shift
+  13: "enter", //enter
+  18: "alt", //alt
+};
+$("body").keydown(function (event) {
+  console.log(keyNames[event.keyCode]);
+}); */
+
+// Ball клавишами
+const circle = function (x, y, radius, fillCircle) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+  if (fillCircle) {
+    ctx.fill();
+  } else {
+    ctx.stroke();
+  }
+};
+
+const Ball = function () {
+  this.x = width / 2;
+  this.y = height / 2;
+  this.xSpeed = 5;
+  this.ySpeed = 0;
+};
+
+Ball.prototype.move = function () {
+  this.x += this.xSpeed;
+  this.y += this.ySpeed;
+  if (this.x < 0) {
+    this.x = width;
+  } else if (this.x > width) {
+    this.x = 0;
+  }
+  if (this.y < 0) {
+    this.y = height;
+  } else if (this.y > height) {
+    this.y = 0;
+  }
+};
+
+Ball.prototype.draw = function () {
+  circle(this.x, this.y, 10, true);
+};
+
+Ball.prototype.setDirection = function (direction) {
+  if (direction === "up") {
+    this.xSpeed = 0;
+    this.ySpeed = -5;
+  } else if (direction === "down") {
+    this.xSpeed = 0;
+    this.ySpeed = 5;
+  } else if (direction === "left") {
+    this.xSpeed = -5;
+    this.ySpeed = 0;
+  } else if (direction === "right") {
+    this.xSpeed = 5;
+    this.ySpeed = 0;
+  } else if (direction === "stop") {
+    this.xSpeed = 0;
+    this.ySpeed = 0;
+  }
+};
+
+const ball = new Ball();
+let keyActions = {
+  32: "stop",
+  37: "left",
+  38: "up",
+  39: "right",
+  40: "down",
+};
+
+$("body").keydown(function (event) {
+  let direction = keyActions[event.keyCode];
+  ball.setDirection(direction);
+});
+
+setInterval(function () {
+  ctx.clearRect(0, 0, width, height);
+  ball.draw();
+  ball.move();
+  ctx.strokeRect(0, 0, width, height);
+}, 30);
+
+// Homework
+
