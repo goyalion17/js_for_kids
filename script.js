@@ -1409,20 +1409,19 @@ const Ball = function () {
   this.y = height / 2;
   this.xSpeed = 5;
   this.ySpeed = 0;
+  this.speed = 5;
 };
 
 Ball.prototype.move = function () {
   this.x += this.xSpeed;
   this.y += this.ySpeed;
-  if (this.x < 0) {
-    this.x = width;
-  } else if (this.x > width) {
-    this.x = 0;
+
+  // Проверка столкновения с границами холста
+  if (this.x < 0 || this.x > width) {
+    this.xSpeed = -this.xSpeed; // Изменяем направление по оси X
   }
-  if (this.y < 0) {
-    this.y = height;
-  } else if (this.y > height) {
-    this.y = 0;
+  if (this.y < 0 || this.y > height) {
+    this.ySpeed = -this.ySpeed; // Изменяем направление по оси Y
   }
 };
 
@@ -1430,22 +1429,32 @@ Ball.prototype.draw = function () {
   circle(this.x, this.y, 10, true);
 };
 
-Ball.prototype.setDirection = function (direction) {
+Ball.prototype.setDirection = function (direction, speed) {
   if (direction === "up") {
     this.xSpeed = 0;
-    this.ySpeed = -5;
+    this.ySpeed = -this.speed;
   } else if (direction === "down") {
     this.xSpeed = 0;
-    this.ySpeed = 5;
+    this.ySpeed = this.speed;
   } else if (direction === "left") {
-    this.xSpeed = -5;
+    this.xSpeed = -this.speed;
     this.ySpeed = 0;
   } else if (direction === "right") {
-    this.xSpeed = 5;
+    this.xSpeed = this.speed;
     this.ySpeed = 0;
   } else if (direction === "stop") {
     this.xSpeed = 0;
     this.ySpeed = 0;
+  }
+  if (speed === "Z") {
+    this.speed = 10;
+  } else if (speed !== undefined) {
+    this.speed = speed;
+  }
+  if (speed === "X") {
+    this.speed = 15;
+  } else if (speed !== undefined) {
+    this.speed = speed;
   }
 };
 
@@ -1457,10 +1466,20 @@ let keyActions = {
   39: "right",
   40: "down",
 };
+let speeds = {
+  90: "Z",
+  88: "X",
+  /* 67: "C", */
+};
 
 $("body").keydown(function (event) {
   let direction = keyActions[event.keyCode];
-  ball.setDirection(direction);
+  let speed = speeds[event.keyCode];
+  if (speed !== undefined) {
+    ball.setDirection(direction, speed);
+  } else {
+    ball.setDirection(direction);
+  }
 });
 
 setInterval(function () {
@@ -1471,4 +1490,6 @@ setInterval(function () {
 }, 30);
 
 // Homework
-
+// 1
+// 2
+// 3
