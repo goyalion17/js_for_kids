@@ -1394,7 +1394,7 @@ $("body").keydown(function (event) {
 }); */
 
 // Ball клавишами
-const circle = function (x, y, radius, fillCircle) {
+/* const circle = function (x, y, radius, fillCircle) {
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
   if (fillCircle) {
@@ -1468,8 +1468,7 @@ let keyActions = {
 };
 let speeds = {
   90: "Z",
-  88: "X",
-  /* 67: "C", */
+  88: "X",  
 };
 
 $("body").keydown(function (event) {
@@ -1487,9 +1486,11 @@ setInterval(function () {
   ball.draw();
   ball.move();
   ctx.strokeRect(0, 0, width, height);
-}, 30);
+}, 30); */
 
 // Homework
 // 1
 // 2
 // 3
+
+// 22.11.2023 ===============================================================
